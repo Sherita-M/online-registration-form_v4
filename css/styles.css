@@ -16,6 +16,15 @@ footer {
   margin: 0 1.0625rem;
 }
 
+body {
+  background: #f3f3f3;
+}
+
+main,
+footer.center {
+  background: #fff;
+}
+
 h1 {
   text-transform: uppercase;
   padding: 1.0625rem 2.6875rem; /* 17px top and bottom, 43px left and right*/
@@ -41,7 +50,6 @@ h3 {
   font-weight: 700;
   color: #000;
   margin: 1.0625rem auto 0.3125rem 0;
-  /* border: none; */
 }
 
 form p {
@@ -65,19 +73,25 @@ fieldset {
   padding-bottom: 1.125rem; /* 18px */
 }
 
-.contact-form label,
+.contact-form,
+.flex,
 .newsletter-form label[for="topics"] {
   display: flex;
-  justify-content: left;
+  flex-direction: column;
   padding-top: 0.75rem; /* 12px */
-  padding-bottom: 00.5625rem; /* 9px */
   font-weight: 300;
+  color: #9ea9b2;
+}
+
+.contact-form label,
+.newsletter-form label[for="topics"] {
+  padding-bottom: 00.5625rem; /* 9px */
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-select {
+select#state {
   width: 100%;
   height: 1.9375rem; /* 31px */
   background-color: #eff0f1;
@@ -134,7 +148,7 @@ textarea:focus {
 
 textarea {
   width: 100%;
-  height: 3.75rem; /* 60px */
+  height: 8rem; /* 128px */
   background-color: #eff0f1;
   border: none;
   border-radius: 3px;
@@ -163,12 +177,37 @@ footer {
   font-weight: 300;
   font-size: 0.75rem; /* 12px */
   font-style: italic;
-  margin-bottom: 7.75rem; /* 124px */
+  padding-bottom: 7.75rem; /* 124px */
 }
 
 @media screen and (min-width: 768px) {
-  .content-container {
+  main {
     margin: 0 11.25rem;
+  }
+
+  .contact-form .flex {
+    flex-direction: row;
+  }
+
+  .contact-form input {
+    flex-grow: 1;
+    flex-basis: 75%;
+  }
+
+  .contact-form label {
+    flex-basis: 25%;
+    height: 50px;
+    margin: auto 0;
+  }
+
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    float: none;
+  }
+
+  select#state {
+    width: 75%;
   }
 
   h1 {
