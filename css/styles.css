@@ -88,7 +88,7 @@ select {
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder,
-textarea[type="textfield"]::placeholder {
+textarea::placeholder {
   text-align: right;
   font-weight: 300;
   color: #9ea9b2;
@@ -101,14 +101,15 @@ select:disabled {
   color: #9ea9b2;
 }
 
-input[type="text zipcode"] {
+input[id="zip-code"] {
   height: 1.9375rem; /* 31px */
   background-color: #eff0f1;
   border: none;
   padding: 1.5rem 0.75rem 1.5rem 0; /* 24px 12px 24px 0px */
+  width: 50%;
 }
 
-input[type="text zipcode"]::placeholder {
+input[id="zip-code"]::placeholder {
   text-align: right;
   color: #9ea9b2;
   font-size: 0.75rem;
@@ -125,8 +126,10 @@ input[type="radio"] {
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline-color: #46698b;
+  transition: 0.4s ease-in;
 }
 
 textarea {
@@ -170,5 +173,9 @@ footer {
 
   h1 {
     font-size: 1rem;
+  }
+
+  input[id="zip-code"] {
+    width: 25%;
   }
 }
