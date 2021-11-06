@@ -165,8 +165,12 @@ button[type="submit"] {
   border: none;
   border-radius: 3px;
   background-color: #4ebbb5;
-  color: #fff;
   cursor: pointer;
+}
+
+button[type="submit"] a {
+  color: #fff;
+  text-decoration: none;
 }
 
 button[type="submit"]:hover {
